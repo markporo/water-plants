@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
+import { Route, Link, Switch, useHistory } from "react-router-dom";
 import './App.css';
+import LoginForm from './components/loginForm'
+import * as yup from 'yup';
 
 function App() {
+  const [signupUserName, setUserNameSignUp] = useState("");
+  const [passwordSignUp, setPasswordSignUp] = useState("");
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginForm setUserNameSignUp={setUserNameSignUp} setPasswordSignUp={setPasswordSignUp}></LoginForm>
     </div>
   );
 }
